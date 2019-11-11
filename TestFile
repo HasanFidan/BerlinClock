@@ -1,0 +1,22 @@
+//The Below Code tests the implementation of Berlin Clock Format so you can use it in your console application
+static void Main(string[] args)
+        {
+            //The Code has been tested by some possible scenarios 
+
+            CreatorClockFormat creator = CreatorClockFormat.Instance();
+
+
+            ClockFormat cf = creator.FactoryMethod(ClockFormats.BerlinClockFormat);
+
+            Console.WriteLine("Time is in Berlin Clock : " + Environment.NewLine + cf.FormatTime("20:40:00"));
+            Console.WriteLine("Time is in Berlin Clock : " + Environment.NewLine + cf.FormatTime("sdasdas"));
+            Console.WriteLine("Time is in Berlin Clock : " + Environment.NewLine + cf.FormatTime("20.40:00"));
+            Console.WriteLine("Time is in Berlin Clock : " + Environment.NewLine + cf.FormatTime("545"));
+            Console.WriteLine("Time is in Berlin Clock : " + Environment.NewLine + cf.FormatTime("17:42:00"));
+
+             cf = creator.FactoryMethod(ClockFormats.DifImpBerlinClockFormat);
+            Console.WriteLine("Time is in Fake Berlin Clock : " + Environment.NewLine + cf.FormatTime("17/42/00"));
+            Console.WriteLine("Time is in Fake Berlin Clock : " + Environment.NewLine + cf.FormatTime("20.40/00"));
+
+            Console.ReadLine();
+        }
